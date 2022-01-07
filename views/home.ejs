@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEWS APP | HOME</title>
+    <style>
+        .container{
+            width: 80%;
+            height: auto;
+            padding: 20px;
+            background-color: aliceblue;
+            margin: auto;
+        }
+        .li{
+            list-style: none;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header style="width: 80%;margin: auto; height: 8vh;background-color: black;padding-left: 10px;align-items: center;display: flex;">
+        <font style="color: white;font-size: 20px;">OliNEWS</font>
+    </header>
+    <div class="container">
+        <ul>
+            <% for(let n=0; n < mynews.length;n++){ %>
+              <a href=" <%= mynews[n].url %> " style="text-decoration: none;font-size: 14px;color: unset;">
+                <li class="li"> 
+                    <strong><%= mynews[n].title %></strong> <br>
+                    <small style="color: gray;"><%= mynews[n].description %></small> <br><br>
+                    <div style="width: 60%;height: 60vh;">
+                        <img src=" <%= mynews[n].urlToImage %> " alt="" style="width: 100%; height: 100%;"><br>
+                        <small style="margin-top: 10px;">Author :<%= mynews[n].author %> --- <%= mynews[n].publishedAt %> </small>
+                    </div>
+                </li>
+                <br><br>
+              </a>
+            <% } %>
+        </ul>
+    </div>
+  
+</body>
+</html>
